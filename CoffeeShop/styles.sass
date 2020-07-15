@@ -1,0 +1,136 @@
+$primary-color: #935a7f
+$secondary-color: antiquewhite
+$ternary-color: lightgrey
+$bright-text: whitesmoke
+$titles-font: "Arial Black", Gadget, sans-serif
+$text-font: "Palatino Linotype", "Book Antiqua", Palatino, serif
+$bullet-size: 6.5px
+$expand-size: 15px
+$rounded-line-color: whitesmoke
+
+body
+  background-image: url("images/background_3.jpg")
+  background-repeat: no-repeat
+  background-attachment: fixed
+  background-size: inherit
+  background-position-x: -50px
+  margin: 0
+
+header
+  margin-bottom: 0
+  padding-bottom: 0
+  #navbar-top
+    display: flex
+    justify-content: space-around
+    padding: 10px
+    #logo-container
+      display: flex
+      color: $bright-text
+      font-family: $titles-font
+      font-size: 15px
+      #logo
+        max-width: 70px
+        max-height: 70px
+        border-radius: 51%
+
+    ul
+      min-width: 100px
+      color: $bright-text
+      overflow: auto
+
+      li
+        display: inline
+        margin-left: 1em
+        a
+          text-decoration: none
+          color: $bright-text
+          cursor: pointer
+      .bullet
+        width: $bullet-size
+        height: $bullet-size
+        margin: auto
+
+  #navbar-mid
+    display: flex
+    flex-direction: column
+    padding: 0 10px 10px 0
+    width: 70%
+    max-height: 70%
+    margin: auto
+    justify-content: center
+    align-items: center
+
+    #page-title
+      color: $bright-text
+      font-family: $titles-font
+      font-size: 50px
+
+    #dining-room-icon
+      margin: auto
+      justify-self: center
+      padding: 0 40px
+      width: 26px
+      height: 26px
+
+    #rounded-line-container
+      display: flex
+      justify-content: space-evenly
+
+    .holder
+      position: relative
+      width: 350px
+      height: 50px
+      padding: 0
+      align-items: center
+
+
+    .smallLine
+      position: absolute
+      height: 10px
+      width: 200%
+      transform: translate(-25%) scale(0.5)
+      margin-top: 20px
+
+    .smallLine1
+      background: linear-gradient(45deg, transparent, transparent 49%, $rounded-line-color 40%, transparent 60%)
+
+    .smallLine2
+      background: linear-gradient(-45deg, transparent, transparent 49%, $rounded-line-color 40%, transparent 60%)
+
+    .smallLine
+      background-size: 20px 20px
+
+    #latin-text
+      font-family: $text-font
+      color: $bright-text
+      text-align: center
+  #navbar-bottom
+    background-color: $ternary-color
+    width: 100%
+    padding: 0 60px
+
+    #bottom-menu
+      padding: 4px
+      margin-bottom: 0
+      li
+        display: inline
+        font-family: $text-font
+        margin: 0 5px
+
+        .expand-arrow
+          width: $expand-size
+          height: $expand-size
+          cursor: pointer
+
+main
+  padding-top: 0
+  margin-top: 0
+  #plates-container
+    background-color: $secondary-color
+    width: auto
+    margin-top: 0
+    padding-top: 0
+
+    p
+      padding-top: 0
+      margin-top: 0
