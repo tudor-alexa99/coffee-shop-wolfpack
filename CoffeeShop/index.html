@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
   <title>Eureka Caffe</title>
 </head>
 <body>
@@ -14,13 +15,13 @@
     </div>
     <ul>
       <li><a id="a-home" href="#">HOME</a></li>
-      <li><img  class="bullet" src="images/orange_bullet_16.png"></li>
+      <li><img class="bullet" src="images/orange_bullet_16.png"></li>
       <li><a id="a-about" href="#">ABOUT</a></li>
-      <li><img  class="bullet" src="images/orange_bullet_16.png"></li>
+      <li><img class="bullet" src="images/orange_bullet_16.png"></li>
       <li><a id="a-service" href="#">SERVICE</a></li>
-      <li><img  class="bullet" src="images/orange_bullet_16.png"></li>
+      <li><img class="bullet" src="images/orange_bullet_16.png"></li>
       <li><a id="a-blog" href="#">BLOG</a></li>
-      <li><img  class="bullet" src="images/orange_bullet_16.png"></li>
+      <li><img class="bullet" src="images/orange_bullet_16.png"></li>
       <li><a id="a-contacts" href="#">CONTACTS</a></li>
     </ul>
   </div>
@@ -37,7 +38,8 @@
         <div class="smallLine smallLine2"></div>
       </div>
     </div>
-    <h2 id="latin-text">Maecenas vells at magna sagittis venenatis. Integer pretium auctor<br> magna, egestas justo gravida vitae. In lacinia auctor auctor</h2>
+    <h2 id="latin-text">Maecenas vells at magna sagittis venenatis. Integer pretium auctor<br> magna, egestas justo
+      gravida vitae. In lacinia auctor auctor</h2>
   </div>
   <div id="navbar-bottom">
     <ul id="bottom-menu">
@@ -45,18 +47,44 @@
       <li id="sorting"><b>SORTING</b><img class="expand-arrow" src="images/expand_arrow_52px.png"></li>
       <li id="vegetarian"><b>VEGETARIAN</b><img class="expand-arrow" src="images/expand_arrow_52px.png"></li>
     </ul>
+    <input id="slider" type="range" min="10" max="150">
+  </div>
   </div>
 </header>
 <main>
-  <div id="plates-container">
-    <p>Test paragraph</p>
-    <p>Test paragraph</p>
-    <p>Test paragraph</p>
-    <p>Test paragraph</p>
-    <p>Test paragraph</p>
-    <p>Test paragraph</p>
-    <p>Test paragraph</p>
-    <p>Test paragraph</p>
+  <div id="all-dishes-container">
+    <div class="dish-container">
+      <img class="dish" src="images/dishes/dish_1.png" alt="dish">
+      <p class="dish-name">Escargos</p>
+      <p class="dish-category">Entrees</p>
+      <p class="dish-price">$15.00</p>
+    </div>
+    <div class="dish-container"><img class="dish" src="images/dishes/dish_2.png" alt="dish">
+      <p class="dish-name">Salmon Pasta</p>
+      <p class="dish-category">Second courses</p>
+      <p class="dish-price">$12.00</p>
+    </div>
+    <div class="dish-container"><img class="dish" src="images/dishes/dish_3.png" alt="dish">
+      <p class="dish-name">Chicken Breasts</p>
+      <p class="dish-category">Entrees</p>
+      <p class="dish-price">$5.00</p>
+    </div>
+    <div class="dish-container"><img class="dish" src="images/dishes/dish_4.png" alt="dish">
+      <p class="dish-name">Ground Beef</p>
+      <p class="dish-category">Main courses</p>
+      <p class="dish-price">$20.00</p></div>
+    <div class="dish-container"><img class="dish" src="images/dishes/dish_5.png" alt="dish">
+      <p class="dish-name">Fruit Salad</p>
+      <p class="dish-category">Desserts</p>
+      <p class="dish-price">$3.00</p></div>
+    <div class="dish-container"><img class="dish" src="images/dishes/dish_6.png" alt="dish">
+      <p class="dish-name">Veggie Salad</p>
+      <p class="dish-category">Entrees</p>
+      <p class="dish-price">$7.00</p></div>
+    <div class="dish-container"><img class="dish" src="images/dishes/dish_7.png" alt="dish">
+      <p class="dish-name">Salmon Salad</p>
+      <p class="dish-category">Main Courses</p>
+      <p class="dish-price">$10.00</p></div>
   </div>
 </main>
 </body>

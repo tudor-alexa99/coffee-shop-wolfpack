@@ -1,15 +1,21 @@
+html {
+  height: 100%;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
+  height: 100%;
+}
+
+header {
+  margin-bottom: 0;
   background-image: url("images/background_3.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: inherit;
   background-position-x: -50px;
-  margin: 0;
-}
-
-header {
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 header #navbar-top {
   display: flex;
@@ -49,7 +55,7 @@ header #navbar-top ul .bullet {
 header #navbar-mid {
   display: flex;
   flex-direction: column;
-  padding: 0 10px 10px 0;
+  padding: 0 10px 60px 0;
   width: 70%;
   max-height: 70%;
   margin: auto;
@@ -101,13 +107,12 @@ header #navbar-mid #latin-text {
   text-align: center;
 }
 header #navbar-bottom {
-  background-color: lightgrey;
+  background-color: #e3e0df;
   width: 100%;
-  padding: 0 60px;
-}
-header #navbar-bottom #bottom-menu {
-  padding: 4px;
+  display: flex;
   margin-bottom: 0;
+  justify-content: space-around;
+  align-items: center;
 }
 header #navbar-bottom #bottom-menu li {
   display: inline;
@@ -119,20 +124,92 @@ header #navbar-bottom #bottom-menu li .expand-arrow {
   height: 15px;
   cursor: pointer;
 }
+header #navbar-bottom #slider {
+  -webkit-appearance: none;
+  width: 15%;
+  height: 8px;
+  border-radius: 2px;
+  background: #ee8519;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+header #navbar-bottom #slider:hover {
+  opacity: 1;
+}
+header #navbar-bottom #slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #1a3442;
+  cursor: pointer;
+}
+header #navbar-bottom #slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #1a3442;
+  cursor: pointer;
+}
 
 main {
   padding-top: 0;
   margin-top: 0;
+  height: 100%;
 }
-main #plates-container {
-  background-color: antiquewhite;
-  width: auto;
-  margin-top: 0;
-  padding-top: 0;
+main #all-dishes-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: white;
+  max-width: 1000px;
+  min-width: 500px;
+  height: 100%;
+  margin: 0 auto;
 }
-main #plates-container p {
-  padding-top: 0;
-  margin-top: 0;
+main #all-dishes-container .dish-container {
+  max-width: 33%;
+  min-width: 250px;
+  padding: 10px 0 0;
+  box-shadow: 9px 15px 12px -15px rgba(130, 130, 130, 0.75);
+  background-color: white;
+  max-height: 450px;
+  cursor: pointer;
+  transition: all 0.7s ease-in-out;
+}
+main #all-dishes-container .dish-container .dish {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+main #all-dishes-container .dish-container .dish-name {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 25px;
+  text-align: center;
+  color: #1a3442;
+  font-weight: bold;
+}
+main #all-dishes-container .dish-container .dish-category {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 18px;
+  text-align: center;
+  color: lightgrey;
+}
+main #all-dishes-container .dish-container .dish-price {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #ee8519;
+  letter-spacing: 0.2em;
+  padding-bottom: 0;
+}
+main #all-dishes-container .dish-container:hover {
+  transform: scale(1.05);
+  z-index: 1.1;
 }
 
 /*# sourceMappingURL=styles.css.map */
