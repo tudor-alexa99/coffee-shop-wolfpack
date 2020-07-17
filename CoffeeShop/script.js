@@ -1,4 +1,5 @@
 window.onload = function() {
+    initialiseDishes();
     populateDishes();
     resizePlates();
     initialiseSlider();
