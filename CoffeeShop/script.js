@@ -1,17 +1,12 @@
-// reorganize the plates
-
 window.onload = function() {
-    resizePlates();
+    // initialiseDishes();
     populateDishes();
+    resizePlates();
 };
 
 window.onresize = function () {
     resizePlates();
 };
-
-// window.onscroll = function () {
-//     scrollDelay();
-// }
 
 function resizePlates() { // function thar resizes the container of all-dishes dynamically
     //get the size of all-dishes container
@@ -25,23 +20,16 @@ function resizePlates() { // function thar resizes the container of all-dishes d
     const threeCards = cardSize * 3;
     if (containerSize >= fourCards){
         container.style.width = `${fourCards}px`;
-        console.log("Resized to 4");
     }
 
     else if (containerSize >= threeCards ){
         container.style.width = `${threeCards}px`;
-        console.log("Resized to 3");
     }
 
     else{
         container.style.width = `${fourCards / 2}px`;
     }
 }
-
-//
-// function scrollDelay() {
-//     console.log("Scroll");
-// }
 
 function Dish(url, name, category, price){
     this.url = url;
@@ -50,14 +38,56 @@ function Dish(url, name, category, price){
     this.price = price;
 }
 
-function dishContainerHTML(dish){
-    const text = '<div class=\"dish-container\"><img class=\"dish\" src=\"' +dish.url + "\"  alt=\"dish\">\n" +
-        "      <p class=\"dish-name\">' + dish.name + ' </p>\n" +
-        "      <p class=\"dish-category\">' + dish</p>\n" +
-        "      <p class=\"dish-price\">$12.00</p>\n" +
-        "    </div>"
+function addDishContainerHTML(dish){
+    const htmlText = `
+                      <img class="dish" src=${dish.url} alt="dish">
+                      <p class="dish-name">${dish.name}</p>
+                      <p class="dish-category">${dish.category}</p>
+                      <p class="dish-price">${dish.price}</p>
+                      `;
+
+
+    let element = document.createElement("div");
+    let attr = document.createAttribute("class");
+    attr.value = "dish-container";
+    element.setAttributeNode(attr);
+
+    element.innerHTML = htmlText;
+    let allDishesContainer = document.getElementById("all-dishes-container");
+    allDishesContainer.appendChild(element);
+
+    console.log(element);
+}
+
+function initialiseDishes() {
+    // this method is only called once :(
+    console.log(JSON.parse(localStorage.getItem("dishesList")));
+    localStorage.clear();
+
+    const dishes = [];
+    let d1 = new Dish("images/dishes/dish_1.png", "Escargos", "Entrees", "$15.00");
+    let d2 = new Dish("images/dishes/dish_2.png", "Salmon Pasta", "Second Courses", "$12.00");
+    let d3 = new Dish("images/dishes/dish_3.png", "Chicken Breasts", "Entrees", "$5.00");
+    let d4 = new Dish("images/dishes/dish_4.png", "Ground Beef", "Main courses", "$20.00");
+    let d5 = new Dish("images/dishes/dish_5.png", "Fruit Salad", "Desserts", "$3.00");
+    let d6 = new Dish("images/dishes/dish_6.png", "Veggie Salad", "Entrees", "$7.00");
+    let d7 = new Dish("images/dishes/dish_7.png", "Salmon Salad", "Main Courses", "$10.00");
+
+    dishes.push(d1);
+    dishes.push(d2);
+    dishes.push(d3);
+    dishes.push(d4);
+    dishes.push(d5);
+    dishes.push(d6);
+    dishes.push(d7);
+
+    localStorage.setItem("dishesList", JSON.stringify(dishes));
+    // console.log(JSON.stringify(dishes));
 }
 
 function populateDishes() {
-
+    const dishesList = JSON.parse(localStorage.getItem("dishesList"));
+    dishesList.forEach(dish => {
+        addDishContainerHTML(dish);
+    })
 }
