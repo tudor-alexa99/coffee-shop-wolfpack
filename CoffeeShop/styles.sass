@@ -11,7 +11,7 @@ $rounded-line-color: whitesmoke
 $dish-size: 250px
 html
   height: 100%
-  background-color: $secondary-color
+  background-color: #ee
   scroll-behavior: smooth
 body
   margin: 0
@@ -126,37 +126,57 @@ header
           width: $expand-size
           height: $expand-size
           cursor: pointer
-    #slider
-      -webkit-appearance: none
-      width: 15%
-      height: 8px
-      border-radius: 2px
-      background: $accent-color
-      outline: none
-      opacity: 0.7
-      -webkit-transition: .2s
-      transition: opacity .2s
+    #slider-container
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 500px
+      #slider
+        -webkit-appearance: none
+        width: 60%
+        height: 6px
+        border-radius: 2px
+        background: $secondary-color
+        outline: none
+        opacity: 0.7
+        -webkit-transition: .2s
+        transition: opacity .2s
 
-    #slider:hover
-      opacity: 1
+      #slider:hover
+        opacity: 1
 
-
-    #slider::-webkit-slider-thumb
-      -webkit-appearance: none
-      appearance: none
-      width: 15px
-      height: 15px
-      border-radius: 50%
-      background: #1a3442
-      cursor: pointer
+      .noUi-handle::before ::after
+        display: none
 
 
-    #slider::-moz-range-thumb
-      width: 15px
-      height: 15px
-      border-radius: 50%
-      background: #1a3442
-      cursor: pointer
+      .noUi-handle
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        background: #1a3442
+        cursor: pointer
+
+
+      .noUi-touch-area
+        width: 15px
+        height: 15px
+        border-radius: 50%
+        background: #1a3442
+        cursor: pointer
+
+      .noUi-connect
+        background-color: $accent-color
+
+      .noUi-handle:before
+        display: none
+
+      .noUi-handle:after
+        display: none
+
+      p
+        font-family: $text-font
+      #price
+        padding-right: 4px
 
 main
   padding-top: 0

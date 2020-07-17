@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript" src="script.js"></script>
+    <script src="node_modules/nouislider/distribute/nouislider.js"></script>
+    <link rel="stylesheet" href="node_modules/nouislider/distribute/nouislider.css">
+    <link rel="stylesheet" href="node_modules/nouislider/distribute/nouislider.min.css">
   <title>Eureka Caffe</title>
 </head>
 <body>
@@ -47,7 +50,16 @@
       <li id="sorting"><b>SORTING</b><img class="expand-arrow" src="images/expand_arrow_52px.png"></li>
       <li id="vegetarian"><b>VEGETARIAN</b><img class="expand-arrow" src="images/expand_arrow_52px.png"></li>
     </ul>
-    <input id="slider" type="range" min="10" max="150">
+<!--    <input id="slider" type="range" min="10" max="150">-->
+    <div id="slider-container">
+      <p id="price"><b> PRICE </b></p>
+      <p id="price-starting"> $ 0</p>
+      <div id="slider">
+        <link href="node_modules/nouislider/distribute/nouislider.css" rel="stylesheet">
+        <script src="node_modules/nouislider/distribute/nouislider.js"></script>
+      </div>
+      <p id="price-ending"> $ 80</p>
+    </div>
   </div>
   </div>
 </header>

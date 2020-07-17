@@ -1,12 +1,14 @@
 window.onload = function() {
-    // initialiseDishes();
     populateDishes();
     resizePlates();
+    initialiseSlider();
+    document.getElementById('slider').addEventListener("mouseup", handleSlider);
 };
 
 window.onresize = function () {
     resizePlates();
 };
+
 
 function resizePlates() { // function thar resizes the container of all-dishes dynamically
     //get the size of all-dishes container
@@ -55,8 +57,6 @@ function addDishContainerHTML(dish){
     element.innerHTML = htmlText;
     let allDishesContainer = document.getElementById("all-dishes-container");
     allDishesContainer.appendChild(element);
-
-    console.log(element);
 }
 
 function initialiseDishes() {
@@ -82,7 +82,6 @@ function initialiseDishes() {
     dishes.push(d7);
 
     localStorage.setItem("dishesList", JSON.stringify(dishes));
-    // console.log(JSON.stringify(dishes));
 }
 
 function populateDishes() {
@@ -90,4 +89,52 @@ function populateDishes() {
     dishesList.forEach(dish => {
         addDishContainerHTML(dish);
     })
+}
+
+function initialiseSlider() {
+    var slider = document.getElementById('slider');
+
+    noUiSlider.create(slider, {
+        start: [1, 80],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 150
+        }
+    });
+}
+
+function handleSlider() {
+    showSliderValues();
+    values = slider.noUiSlider.get();
+    console.log(values);
+    const starting = parseFloat(values[0]);
+    const ending = parseFloat(values[1])
+    showPriceInterval(starting, ending);
+    filterByPrice(starting, ending);
+}
+
+function showSliderValues(){
+
+}
+
+function filterByPrice(starting, ending){
+    document.getElementById("all-dishes-container").innerHTML = "";
+    dishesList = JSON.parse(localStorage.getItem("dishesList"));
+    dishesList.forEach(dish =>{
+        let price = String(dish.price).replace("$", "");
+        price = parseInt(price);
+        console.log(price);
+        if (price >= starting && price <= ending){
+            addDishContainerHTML(dish);
+        }
+    })
+}
+
+function showPriceInterval(starting, ending) {
+    let start = document.getElementById("price-starting");
+    start.innerText = " $ " + starting;
+
+    let end = document.getElementById("price-ending");
+    end.innerText = " $ " + ending;
 }

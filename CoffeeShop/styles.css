@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  background-color: white;
+  background-color: #ee;
   scroll-behavior: smooth;
 }
 
@@ -124,35 +124,57 @@ header #navbar-bottom #bottom-menu li .expand-arrow {
   height: 15px;
   cursor: pointer;
 }
-header #navbar-bottom #slider {
+header #navbar-bottom #slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+header #navbar-bottom #slider-container #slider {
   -webkit-appearance: none;
-  width: 15%;
-  height: 8px;
+  width: 60%;
+  height: 6px;
   border-radius: 2px;
-  background: #ee8519;
+  background: white;
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
 }
-header #navbar-bottom #slider:hover {
+header #navbar-bottom #slider-container #slider:hover {
   opacity: 1;
 }
-header #navbar-bottom #slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
+header #navbar-bottom #slider-container .noUi-handle::before ::after {
+  display: none;
+}
+header #navbar-bottom #slider-container .noUi-handle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1a3442;
+  cursor: pointer;
+}
+header #navbar-bottom #slider-container .noUi-touch-area {
   width: 15px;
   height: 15px;
   border-radius: 50%;
   background: #1a3442;
   cursor: pointer;
 }
-header #navbar-bottom #slider::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #1a3442;
-  cursor: pointer;
+header #navbar-bottom #slider-container .noUi-connect {
+  background-color: #ee8519;
+}
+header #navbar-bottom #slider-container .noUi-handle:before {
+  display: none;
+}
+header #navbar-bottom #slider-container .noUi-handle:after {
+  display: none;
+}
+header #navbar-bottom #slider-container p {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+header #navbar-bottom #slider-container #price {
+  padding-right: 4px;
 }
 
 main {
