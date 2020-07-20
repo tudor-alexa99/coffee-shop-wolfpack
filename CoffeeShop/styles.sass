@@ -11,8 +11,9 @@ $rounded-line-color: whitesmoke
 $dish-size: 250px
 html
   height: 100%
-  background-color: #ee
+  background-color: $ternary-color
   scroll-behavior: smooth
+
 body
   margin: 0
   height: 100%
@@ -24,15 +25,18 @@ header
   background-attachment: fixed
   background-size: inherit
   background-position-x: -50px
+
   #navbar-top
     display: flex
     justify-content: space-around
     padding: 10px
+
     #logo-container
       display: flex
       color: $bright-text
       font-family: $titles-font
       font-size: 15px
+
       #logo
         max-width: 70px
         max-height: 70px
@@ -46,10 +50,12 @@ header
       li
         display: inline
         margin-left: 1em
+
         a
           text-decoration: none
           color: $bright-text
           cursor: pointer
+
       .bullet
         width: $bullet-size
         height: $bullet-size
@@ -109,6 +115,7 @@ header
       font-family: $text-font
       color: $bright-text
       text-align: center
+
   #navbar-bottom
     background-color: $ternary-color
     width: 100%
@@ -116,6 +123,7 @@ header
     margin-bottom: 0
     justify-content: space-around
     align-items: center
+
     #bottom-menu
       li
         display: inline
@@ -126,11 +134,13 @@ header
           width: $expand-size
           height: $expand-size
           cursor: pointer
+
     #slider-container
       display: flex
       justify-content: center
       align-items: center
       width: 500px
+
       #slider
         -webkit-appearance: none
         width: 60%
@@ -175,6 +185,7 @@ header
 
       p
         font-family: $text-font
+
       #price
         padding-right: 4px
 
@@ -182,6 +193,7 @@ main
   padding-top: 0
   margin-top: 0
   height: 100%
+
   #all-dishes-container
     display: flex
     justify-content: flex-start
@@ -202,6 +214,7 @@ main
       max-height: 450px
       cursor: pointer
       transition: all 0.7s ease-in-out
+
       .dish
         border-radius: 50%
         width: $dish-size

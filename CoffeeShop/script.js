@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     populateDishes();
     resizePlates();
     initialiseSlider();
@@ -20,27 +20,23 @@ function resizePlates() { // function thar resizes the container of all-dishes d
     const cardSize = card.offsetWidth;
     const fourCards = cardSize * 4;
     const threeCards = cardSize * 3;
-    if (containerSize >= fourCards){
+    if (containerSize >= fourCards) {
         container.style.width = `${fourCards}px`;
-    }
-
-    else if (containerSize >= threeCards ){
+    } else if (containerSize >= threeCards) {
         container.style.width = `${threeCards}px`;
-    }
-
-    else{
+    } else {
         container.style.width = `${fourCards / 2}px`;
     }
 }
 
-function Dish(url, name, category, price){
+function Dish(url, name, category, price) {
     this.url = url;
     this.name = name;
     this.category = category;
     this.price = price;
 }
 
-function addDishContainerHTML(dish){
+function addDishContainerHTML(dish) {
     const htmlText = `
                       <img class="dish" src=${dish.url} alt="dish">
                       <p class="dish-name">${dish.name}</p>
@@ -105,7 +101,6 @@ function initialiseSlider() {
 }
 
 function handleSlider() {
-    showSliderValues();
     values = slider.noUiSlider.get();
     console.log(values);
     const starting = parseFloat(values[0]);
@@ -114,18 +109,14 @@ function handleSlider() {
     filterByPrice(starting, ending);
 }
 
-function showSliderValues(){
-
-}
-
-function filterByPrice(starting, ending){
+function filterByPrice(starting, ending) {
     document.getElementById("all-dishes-container").innerHTML = "";
     dishesList = JSON.parse(localStorage.getItem("dishesList"));
-    dishesList.forEach(dish =>{
+    dishesList.forEach(dish => {
         let price = String(dish.price).replace("$", "");
         price = parseInt(price);
         console.log(price);
-        if (price >= starting && price <= ending){
+        if (price >= starting && price <= ending) {
             addDishContainerHTML(dish);
         }
     })
