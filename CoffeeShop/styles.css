@@ -1,0 +1,236 @@
+html {
+  height: 100%;
+  background-color: #e3e0df;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+header {
+  margin-bottom: 0;
+  background-image: url("images/background_3.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: inherit;
+  background-position-x: -50px;
+}
+header #navbar-top {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+header #navbar-top #logo-container {
+  display: flex;
+  color: whitesmoke;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 15px;
+}
+header #navbar-top #logo-container #logo {
+  max-width: 70px;
+  max-height: 70px;
+  border-radius: 51%;
+}
+header #navbar-top ul {
+  min-width: 100px;
+  color: whitesmoke;
+  overflow: auto;
+}
+header #navbar-top ul li {
+  display: inline;
+  margin-left: 1em;
+}
+header #navbar-top ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+  cursor: pointer;
+}
+header #navbar-top ul .bullet {
+  width: 6.5px;
+  height: 6.5px;
+  margin: auto;
+}
+header #navbar-mid {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 60px 0;
+  width: 70%;
+  max-height: 70%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+header #navbar-mid #page-title {
+  color: whitesmoke;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 50px;
+}
+header #navbar-mid #dining-room-icon {
+  margin: auto;
+  justify-self: center;
+  padding: 0 40px;
+  width: 26px;
+  height: 26px;
+}
+header #navbar-mid #rounded-line-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+header #navbar-mid .holder {
+  position: relative;
+  width: 350px;
+  height: 50px;
+  padding: 0;
+  align-items: center;
+}
+header #navbar-mid .smallLine {
+  position: absolute;
+  height: 10px;
+  width: 200%;
+  transform: translate(-25%) scale(0.5);
+  margin-top: 20px;
+}
+header #navbar-mid .smallLine1 {
+  background: linear-gradient(45deg, transparent, transparent 49%, whitesmoke 40%, transparent 60%);
+}
+header #navbar-mid .smallLine2 {
+  background: linear-gradient(-45deg, transparent, transparent 49%, whitesmoke 40%, transparent 60%);
+}
+header #navbar-mid .smallLine {
+  background-size: 20px 20px;
+}
+header #navbar-mid #latin-text {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: whitesmoke;
+  text-align: center;
+}
+header #navbar-bottom {
+  background-color: #e3e0df;
+  width: 100%;
+  display: flex;
+  margin-bottom: 0;
+  justify-content: space-around;
+  align-items: center;
+}
+header #navbar-bottom #bottom-menu li {
+  display: inline;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin: 0 5px;
+}
+header #navbar-bottom #bottom-menu li .expand-arrow {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+header #navbar-bottom #slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+header #navbar-bottom #slider-container #slider {
+  -webkit-appearance: none;
+  width: 60%;
+  height: 6px;
+  border-radius: 2px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+header #navbar-bottom #slider-container #slider:hover {
+  opacity: 1;
+}
+header #navbar-bottom #slider-container .noUi-handle::before ::after {
+  display: none;
+}
+header #navbar-bottom #slider-container .noUi-handle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #1a3442;
+  cursor: pointer;
+}
+header #navbar-bottom #slider-container .noUi-touch-area {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #1a3442;
+  cursor: pointer;
+}
+header #navbar-bottom #slider-container .noUi-connect {
+  background-color: #ee8519;
+}
+header #navbar-bottom #slider-container .noUi-handle:before {
+  display: none;
+}
+header #navbar-bottom #slider-container .noUi-handle:after {
+  display: none;
+}
+header #navbar-bottom #slider-container p {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+header #navbar-bottom #slider-container #price {
+  padding-right: 4px;
+}
+
+main {
+  padding-top: 0;
+  margin-top: 0;
+  height: 100%;
+}
+main #all-dishes-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: white;
+  max-width: 1000px;
+  min-width: 500px;
+  height: 100%;
+  margin: 0 auto;
+}
+main #all-dishes-container .dish-container {
+  max-width: 33%;
+  min-width: 250px;
+  padding: 10px 0 0;
+  box-shadow: 9px 15px 12px -15px rgba(130, 130, 130, 0.75);
+  max-height: 450px;
+  cursor: pointer;
+  transition: all 0.7s ease-in-out;
+}
+main #all-dishes-container .dish-container .dish {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+main #all-dishes-container .dish-container .dish-name {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 25px;
+  text-align: center;
+  color: #1a3442;
+  font-weight: bold;
+}
+main #all-dishes-container .dish-container .dish-category {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 18px;
+  text-align: center;
+  color: lightgrey;
+}
+main #all-dishes-container .dish-container .dish-price {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #ee8519;
+  letter-spacing: 0.2em;
+  padding-bottom: 0;
+}
+main #all-dishes-container .dish-container:hover {
+  transform: scale(1.05);
+  z-index: 1.1;
+}
+
+/*# sourceMappingURL=styles.css.map */
